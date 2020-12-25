@@ -142,5 +142,14 @@ LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "dashboard"
 
 
-EMAIL_HOST = "localhost"
-EMAIL_PORT = 1025
+# EMAIL_HOST = "localhost"
+# EMAIL_PORT = 1025
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = True
+#ACCOUNT_EMAIL_VERIFICATION = 'none'
+#DEFAULT_FROM_EMAIL = 'wintersoldier3536@gmail.com'
